@@ -21,7 +21,7 @@ const SplashScreen = () => {
           Continue as Employee
         </button>
         <button className="btn btn-success w-100" 
-        onClick={() => navigate("/auth/doctor/login")}
+        onClick={() => navigate("/auth/company/login")}
         > 
           Continue as Company
         </button>

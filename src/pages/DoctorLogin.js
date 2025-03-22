@@ -28,7 +28,7 @@ const DoctorLogin = () => {
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
 
-      const q = query(collection(db, "Doctors"), where("Email", "==", user.email));
+      const q = query(collection(db, "Companies"), where("Email", "==", user.email));
       const querySnapshot = await getDocs(q);
 
       let empID = null;
@@ -36,7 +36,7 @@ const DoctorLogin = () => {
         const docDoc = querySnapshot.docs[0];
         empID = docDoc.id;
       } else {
-        setError("❌ Doctor not found in records.");
+        setError("❌ Company not found in records.");
         setLoading(false);
         return;
       }
@@ -45,7 +45,7 @@ const DoctorLogin = () => {
       setWorkerId(empID);
       localStorage.setItem("workerId", empID);
 
-      const userRef = doc(db, "Doctors", empID);
+      const userRef = doc(db, "Companies", empID);
       await updateDoc(userRef, {
         LastLogin: serverTimestamp(),
       });
@@ -72,7 +72,7 @@ const DoctorLogin = () => {
   return (
     <div className="d-flex align-items-center justify-content-center vh-100 bg-light">
       <div className="card p-4 shadow" style={{ width: "350px" }}>
-        <h3 className="text-center mb-3">Doctor Login</h3>
+        <h3 className="text-center mb-3">Company Login</h3>
         {error && <div className="alert alert-danger">{error}</div>}
 
         {!showReset ? (
@@ -134,7 +134,7 @@ const DoctorLogin = () => {
               </p>
               <hr/>
               <p className="text-center">
-                Don't have an account? <Link to="/auth/doctor/register">Register</Link>
+                Don't have an account? <Link to="/auth/company/register">Register</Link>
               </p>
             </form>
           </>

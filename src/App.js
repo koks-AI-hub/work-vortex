@@ -34,8 +34,8 @@ function App() {
         <Route path="/auth/employee/register" element={<EmployeRegister/>} />
         <Route path="/auth/employee/login" element={<EmployeLogin/>} />
 
-        <Route path="/auth/doctor/register" element={<DoctorRegister/>} />
-        <Route path="/auth/doctor/login" element={<DoctorLogin/>} />
+        <Route path="/auth/company/register" element={<DoctorRegister/>} />
+        <Route path="/auth/company/login" element={<DoctorLogin/>} />
 
         <Route element={<EmployeeLayout employee={employee} />}>
         <Route path="/employee/doctorslist" element={<EmployeeDoctors/>} />

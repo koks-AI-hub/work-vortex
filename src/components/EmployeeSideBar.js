@@ -59,10 +59,7 @@ const EmployeeSidebar = ({ employee }) => {
   const menuItems = [
     { text: "Dashboard", icon: <Home />, path: "/employee/dashboard" },
     { text: "Profile", icon: <Person />, path: "/employee/profile" },
-    { text: "Doctors", icon: <LocalHospital />, path: "/employee/doctorslist" },
     { text: "Reports", icon: <Assignment />, path: "/employee/reports" },
-    { text: "Appointments", icon: <CalendarMonth />, path: "/employee/appointments" },
-    { text: "Tablets & Prescriptions", icon: <Medication />, path: "/employee/tablets" },
   ];
 
   return (
@@ -79,7 +76,7 @@ const EmployeeSidebar = ({ employee }) => {
           <Box sx={{ display: "flex", alignItems: "center", flexGrow: 1, justifyContent: "center" }}>
             {/* <img src={logo} alt="SAIL Logo" style={{ width: 40, height: 40, marginRight: 10 }} /> */}
             <Typography variant="h6" sx={{ fontWeight: "bold", color: "#ffffff" }}>
-              SAIL Health Portal
+              Work Vortex 
             </Typography>
           </Box>
 
@@ -141,7 +138,7 @@ const EmployeeSidebar = ({ employee }) => {
               </Avatar>
             )}
             <Typography variant="h6" sx={{ fontWeight: "bold", color: "#ffffff" }}>{employee.Name || "Loading..."}</Typography>
-            <Typography variant="body2" sx={{ color: "#B0BEC5" }}>{employee.EmployeeId || "Logging in..."}</Typography>
+            <Typography variant="body2" sx={{ color: "#B0BEC5" }}>{employee.Phone || "Logging in..."}</Typography>
           </Toolbar>
 
           <Divider sx={{ bgcolor: "#FFD700", height: 2 }} /> {/* Gold Divider */}
