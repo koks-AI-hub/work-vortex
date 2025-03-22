@@ -8,7 +8,7 @@
 # build output
 /public
 /build
-/package.json
+
 /package-lock.json
 
 # Firebase configuration (if sensitive keys are stored in .env)
